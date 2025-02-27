@@ -1,5 +1,4 @@
 "use client"
-
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Code, Terminal, Search, BarChart2, Users, Zap, Globe, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -17,7 +16,7 @@ export default function Home() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1])
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white overflow-hidden">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <motion.div
@@ -32,10 +31,10 @@ export default function Home() {
             transition={{ duration: 0.8, type: "spring" }}
             className="inline-block mb-8"
           >
-            <Code size={80} className="text-white" />
+            <Code size={80} className="text-black dark:text-white" />
           </motion.div>
           <h1 className="text-5xl md:text-7xl font-bold mb-4">AI CHAT for Coding</h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-8">AI-Powered Coding Assistant</p>
+          <p className="text-xl md:text-2xl mb-8">AI-Powered Coding Assistant</p>
           <Link href="/chat">
             <Button size="lg" className="bg-white text-black hover:bg-gray-200">
               Start
@@ -96,11 +95,11 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-900 p-6 rounded-lg hover:bg-gray-800 transition-colors"
+                className="bg-white dark:bg-black p-6 rounded-lg hover:bg-white dark:hover:bg-black transition-colors"
               >
-                <div className="text-white mb-4">{feature.icon}</div>
+                <div className="mb-4 text-black dark:text-white">{feature.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-400">{feature.description}</p>
+                <p className="text-black dark:text-white">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -108,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 px-4 bg-gray-900">
+      <section className="py-20 px-4 bg-white dark:bg-black">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             How It Works
@@ -138,12 +137,12 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex items-start"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center font-bold text-xl mr-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white dark:bg-black text-black dark:text-white flex items-center justify-center font-bold text-xl mr-4">
                   {item.step}
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-400">{item.description}</p>
+                  <p className="text-black dark:text-white">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -152,7 +151,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gray-900 to-black">
+      <section className="py-20 px-4 bg-white dark:bg-black">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -166,7 +165,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl mb-8 text-gray-400"
+            className="text-xl mb-8"
           >
             Join the future of coding.
           </motion.p>
