@@ -613,7 +613,7 @@ export default function ChatPage() {
                   disabled={isLoading}
                 />
                 <div className="absolute right-2 bottom-2 flex items-center gap-1">
-                  <TooltipProvider>
+                  {/* <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button
@@ -630,7 +630,7 @@ export default function ChatPage() {
                         <p>Search in conversation</p>
                       </TooltipContent>
                     </Tooltip>
-                  </TooltipProvider>
+                  </TooltipProvider> */}
 
                   <DropdownMenu open={isEmojiPickerOpen} onOpenChange={setIsEmojiPickerOpen}>
                     <DropdownMenuTrigger asChild>
